@@ -1,25 +1,80 @@
-import logo from './logo.svg';
 import './App.css';
+import Greet  from './Component/Greet';
+import Child from './Component/Child';
+import ProductDetails from './Component/ProductDetails';
+import NextChild from './Component/NextChild';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App  = () => {
+  const value = 'Data from parent';
+  const employee = {
+      name : 'Vamshi',
+      salary : '$2323232'
+  }
+
+  const ProductList = [
+     {
+       name : 'Iphone',
+       price  : '34534$'
+     },
+     {
+      name : 'Samsung',
+      price  : '343433434$'
+    },
+    {
+      name : 'Mac',
+      price  : '343434555$'
+    },
+    {
+      name : 'Iphone-x',
+      price  : '3453433333$'
+    }
+  ]
+
+
+
+      return <>
+       <h1>Hello World</h1>
+       <h2>Hello Props</h2>
+       <Greet name={value}  employeeName="Swapnil"/>
+       <Child empprops={employee}/>
+       <ProductDetails  productProps = {ProductList}/>
+       <NextChild > 
+          <span>
+             <label for="text" >Content Projection</label>
+          </span>
+        </NextChild>
+      </>
+     
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
